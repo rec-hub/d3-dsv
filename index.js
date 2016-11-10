@@ -3,9 +3,9 @@
 // export {tsvParse, tsvParseRows, tsvFormat, tsvFormatRows} from "./src/tsv";
 'use strict';
 
-let _dsv = require(_dirname+"/src/dsv.js");
-let _csv = require(_dirname+"/src/csv.js");
-let _tsv = require(_dirname+"/src/tsv.js");
+let _dsv = require(__dirname+"/src/dsv.js");
+let _csv = require(__dirname+"/src/csv.js");
+let _tsv = require(__dirname+"/src/tsv.js");
 module.exports = {
 	dsvFormat:_dsv,
 	csvParse: _csv.csvParse,
