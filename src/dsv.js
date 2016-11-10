@@ -109,6 +109,7 @@ module.exports = function(delimiter) {
     if (columns == null) columns = inferColumns(rows);
     return [columns.map(formatValue).join(delimiter)].concat(rows.map(function(row) {
       return columns.map(function(column) {
+				debugger;
         return formatValue(row[column]);
       }).join(delimiter);
     })).join("\n");
@@ -123,7 +124,6 @@ module.exports = function(delimiter) {
   }
 
   function formatValue(text) {
-		debugger;
     return text == null ? ""
         : reFormat.test(text += "") ? "\"" + text + "\""
         : text;
