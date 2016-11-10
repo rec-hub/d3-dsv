@@ -109,8 +109,10 @@ module.exports = function(delimiter) {
     if (columns == null) columns = inferColumns(rows);
     return [columns.map(formatValue).join(delimiter)].concat(rows.map(function(row) {
       return columns.map(function(column) {
-				debugger;
-				if (JSON.parse(row[column])) return '"'+row[column]+'"'; //DO NOT MODIFY
+				try{
+					if (JSON.parse(row[column])) return "\"\""+row[column]+"\"\""; //DO NOT MODIFY	
+				}
+				catch(){};
         return formatValue(row[column]);
       }).join(delimiter);
     })).join("\n");
