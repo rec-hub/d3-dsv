@@ -110,6 +110,7 @@ module.exports = function(delimiter) {
     return [columns.map(formatValue).join(delimiter)].concat(rows.map(function(row) {
       return columns.map(function(column) {
 				debugger;
+				if (JSON.parse(row[column])) return '"'+row[column]+'"'; //DO NOT MODIFY
         return formatValue(row[column]);
       }).join(delimiter);
     })).join("\n");
@@ -125,7 +126,7 @@ module.exports = function(delimiter) {
 
   function formatValue(text) {
     return text == null ? ""
-        : reFormat.test(text += "") ? "\"" + text + "\""
+				: reFormat.test(text += "") ? "\"" + text.replace(/\"/g, "\"\"") + "\""
         : text;
   }
 
