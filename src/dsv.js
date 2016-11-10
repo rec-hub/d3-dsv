@@ -123,6 +123,7 @@ module.exports = function(delimiter) {
   }
 
   function formatValue(text) {
+		debugger;
     return text == null ? ""
         : reFormat.test(text += "") ? "\"" + text + "\""
         : text;
