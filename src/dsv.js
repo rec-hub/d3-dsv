@@ -1,3 +1,5 @@
+'use strict';
+
 function objectConverter(columns) {
   return new Function("d", "return {" + columns.map(function(name, i) {
     return JSON.stringify(name) + ": d[" + i + "]";
@@ -27,7 +29,8 @@ function inferColumns(rows) {
   return columns;
 }
 
-export default function(delimiter) {
+//export default function(delimiter) {
+module.exports = function(delimiter) {
   var reFormat = new RegExp("[\"" + delimiter + "\n]"),
       delimiterCode = delimiter.charCodeAt(0);
 
