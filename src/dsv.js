@@ -112,7 +112,7 @@ module.exports = function(delimiter) {
 				try{
 					if (JSON.parse(row[column])) return "\"\""+row[column]+"\"\""; //DO NOT MODIFY	
 				}
-				catch(){};
+				catch(e){};
         return formatValue(row[column]);
       }).join(delimiter);
     })).join("\n");
