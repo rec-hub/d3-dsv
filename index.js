@@ -8,12 +8,12 @@ let _csv = require(_dirname+"/src/csv.js");
 let _tsv = require(_dirname+"/src/tsv.js");
 module.exports = {
 	dsvFormat:_dsv,
-	csvParse: _csv.csvParse;
-	csvParseRows: _csv.csvParseRows;
-	csvFormat: _csv.csvFormat;
-	csvFormatRows: _csv.csvFormatRows;
-	tsvParse: _tsv.tsvParse;
-	tsvParseRows: _tsv.tsvParseRows;
-	tsvFormat: _tsv.tsvFormat;
-	tsvFormatRows: _tsv.tsvFormatRows;
+	csvParse: _csv.csvParse,
+	csvParseRows: _csv.csvParseRows,
+	csvFormat: _csv.csvFormat,
+	csvFormatRows: _csv.csvFormatRows,
+	tsvParse: _tsv.tsvParse,
+	tsvParseRows: _tsv.tsvParseRows,
+	tsvFormat: _tsv.tsvFormat,
+	tsvFormatRows: _tsv.tsvFormatRows,
 };
